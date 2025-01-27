@@ -1,0 +1,11 @@
+ Problem 8 Get Make, FuelTypeName and Number of Vehicles per FuelType per Make
+
+
+SELECT Makes.make,FuelTypes.FuelTypeName, count (*) As NumberOfVehicles
+FROM   VehicleDetails inner join
+       Makes on VehicleDetails.MakeID = Makes.MakeID inner join
+       FuelTypes on VehicleDetails.FuelTypeID = FuelTypes.FuelTypeID
+WHERE  (VehicleDetails.Year between 1950 and 2000)
+GROUP BY Makes.make,FuelTypes.FuelTypeName
+ORDER BY Makes.make;
+
