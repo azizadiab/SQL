@@ -1,0 +1,9 @@
+  Problem 10 Get all Makes that runs with GAS
+
+
+
+SELECT distinct Makes.Make,FuelTypes.FuelTypeName
+FROM   VehicleDetails inner join
+       FuelTypes on VehicleDetails.FuelTypeID = FuelTypes.FuelTypeID inner join 
+       Makes on VehicleDetails.MakeID = Makes.MakeID       
+WHERE  (FuelTypes.FuelTypeName = N'GAS')
