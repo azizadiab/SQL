@@ -1,0 +1,10 @@
+
+
+  Problem 9 Get all vehicles that runs with GAS
+
+SELECT VehicleDetails.*, FuelTypes.FuelTypeName
+From   VehicleDetails inner join
+       FuelTypes on VehicleDetails.FuelTypeID= FuelTypes.FuelTypeID
+WHERE  FuelTypes.FuelTypeName = N'GAS';
+
+--- N for unicode
