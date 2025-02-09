@@ -1,0 +1,11 @@
+  Problem 11: Get Total Makes that runs with GAS
+
+
+select count(*) As TotalMakesRunOnGas
+FROM(
+SELECT distinct Makes.Make,FuelTypes.FuelTypeName
+FROM   Makes inner join
+       VehicleDetails on Makes.MakeID = VehicleDetails.MakeID inner join 
+       FuelTypes on VehicleDetails.FuelTypeID = FuelTypes.FuelTypeID            
+WHERE  (FuelTypes.FuelTypeName = N'GAS')
+)R1
